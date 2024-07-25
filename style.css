@@ -134,6 +134,7 @@ p {
   background-size: 100vw 3px;
   animation: bgscroll 15s linear infinite;
   filter: blur(0.5px);
+  opacity: .92;
 }
 
 @keyframes bgscroll {
@@ -810,7 +811,7 @@ p#s3-p3 {
 
 #falling {
   position: sticky;
-  width: 310px;
+  width: 315px;
   top: 100px;
   left: 258px;
   animation: 4s bobbing infinite steps(12);
