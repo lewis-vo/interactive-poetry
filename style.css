@@ -454,7 +454,7 @@ p {
   left: 60px;
   top: 20px;
   z-index: -1;
-  color: #000;
+  color: var(--dark);
 }
 
 #r2-p4 {
@@ -764,22 +764,26 @@ p#r3-p3 {
 }
 #ocean-back {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 110%;
-  height: 230px;
+  bottom: 46px;
+  /* left: -30px; */
+  width: 100%;
+  /* height: 180px; */
+  transform: scale(1.2, 1.08);
+  transform-origin: bottom;
 }
 #ocean-front {
   position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 110%;
-  height: 250px;
+  bottom: -10px;
+  /* left: -30px; */
+  width: 100%;
+  /* height: 180px; */
+  transform: scale(1.2, 1.08);
+  transform-origin: bottom;
 }
 
 #falling {
   position: sticky;
-  width: 330px;
+  width: 310px;
   top: 100px;
   left: 258px;
   animation: 4s bobbing infinite steps(12);
@@ -848,7 +852,7 @@ p#r3-p3 {
   transition-delay: 1400ms;
 }
 
-.flash {
+#flash {
   position: absolute;
   width: 100vw;
   height: 1000vh;
@@ -860,7 +864,7 @@ p#r3-p3 {
   pointer-events: none;
 }
 
-.s5a-triggered .flash {
+.s5a-triggered #flash {
   animation: flash 800ms forwards;
   animation-iteration-count: 1;
 }
@@ -1062,7 +1066,7 @@ p#r3-p3 {
   }
 }
 
-.text {
+.dialogue-box {
   position: absolute;
   right: 41px;
   top: 863px;
@@ -1073,10 +1077,10 @@ p#r3-p3 {
   background-size: 100% auto;
   /* padding-bottom: 0; */
   /* box-sizing: border-box; */
-  color: #000;
+  color: var(--dark);
 }
 
-.text.bottom {
+.dialogue-box.bottom {
   left: 151px;
   top: 1245px;
   width: 280px;
@@ -1086,7 +1090,7 @@ p#r3-p3 {
   background-size: 100% auto;
   padding-left: 64px;
   /* box-sizing: border-box; */
-  color: #000;
+  color: var(--dark);
   padding-left: 93px;
 }
 
@@ -1655,7 +1659,7 @@ img#running {
   bottom: 0;
   right: 150px;
   transform: translateY(200px) rotate(30deg);
-  transition: 700ms steps(7);
+  transition: 700ms steps(12);
   transition-delay: 500ms;
 }
 
@@ -1677,7 +1681,7 @@ img#running {
   width: 400px;
   left: 70px;
   bottom: 200px;
-  transition: 2s steps(20);
+  transition: 2s steps(16);
 }
 
 .letter-paper {
@@ -1689,7 +1693,7 @@ img#running {
 
 #r8-p1 {
   width: 300px;
-  color: #000;
+  color: var(--dark);
   transform: rotate(22deg);
   position: relative;
   left: 92px;
@@ -1711,7 +1715,7 @@ img#running {
 .section.buffer {
   position: relative;
   height: 16vh;
-  background-color: #000;
+  background-color: var(--dark);
   min-height: unset;
 }
 

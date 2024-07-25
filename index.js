@@ -266,11 +266,31 @@ function playSoundOnHover() {
 
 playSoundOnHover();
 
+function playSoundOnClick() {
+  const elements = document.querySelectorAll('[data-sound-on-click]');
+
+  elements.forEach(element => {
+    element.addEventListener('click', () => {
+      const soundId = element.dataset.soundOnClick;
+      const soundVolume = element.dataset.volume;
+      const soundElement = document.getElementById(soundId);
+
+      if (soundElement) {
+        soundElement.play();
+        soundElement.volume = parseFloat(soundVolume);
+      }
+    });
+  });
+}
+
+playSoundOnClick();
+
 
 
 const bgSound = document.getElementById("background-sound");
 document.getElementById("play-button").addEventListener("click", () => {
-  bgSound.play()
+  bgSound.play();
+  bgSound.volume = 0.9;
 });
 
 function createParallaxEffect() {

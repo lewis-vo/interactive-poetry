@@ -6,11 +6,13 @@
     <title>Do you want somebody, like I want somebody?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="theme-color" content="#ed0103" />
     <link
       href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap"
       rel="stylesheet"
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
+    
   </head>
 
   <body id="main">
@@ -115,7 +117,7 @@
         </div>
       </div>
 
-      <img id="ransom3" data-sound-on-hover="clink-sound" data-volume=".67" class="cursor-interest" src="./assets/Scene3_2.svg" />
+      <img id="ransom3" data-sound-on-hover="clink-sound" data-volume=".72" class="cursor-interest" src="./assets/Scene3_2.svg" />
 
       <p id="r3-p1" class="text-align-right">
         Vending machine<br />hummed, the
@@ -151,17 +153,17 @@
           src="./assets/Scene5a_1.svg"
         />
         <img class="heartring" src="./assets/Scene5a_4.svg" />
-        <div class="text">you hurried,</div>
+        <div class="dialogue-box">you hurried,</div>
         <img id="lightning2" src="./assets/Scene5a_3.svg" />
         <img class="heartring2" src="./assets/Scene5a_4.svg" />
-        <div class="text bottom">
+        <div class="dialogue-box bottom">
           hair plastered<br />
           to your face.
         </div>
         <div class="circle"></div>
         <img id="running" src="./assets/Scene5a_8.gif" />
       </div>
-      <div class="flash"></div>
+      <div id="flash"></div>
     </section>
 
     <section class="section" id="s5b">
@@ -226,51 +228,71 @@
           id="profile1"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_3.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile4"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_6.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile3"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_5.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile5"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_7.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile6"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_8.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile8"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_10.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile7"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_9.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile10"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_12.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile9"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_11.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
         <img
           id="profile2"
           class="profile-picture cursor-interest"
           src="./assets/Scene7_4.png"
+          data-sound-on-hover="tap-sound"
+          data-volume=".7"
         />
       </div>
 
@@ -314,10 +336,10 @@
         <img src="./assets/Scene8_3.png" class="envelope-front" />
       </div>
     </section>
-    <audio id="chime-sound" src="./sounds/chime.mp3"></audio>
     <audio id="clink-sound" src="./sounds/clink.mp3"></audio>
     <audio id="scream-sound" src="./sounds/yah.mp3"></audio>
     <audio id="rain-sound" src="./sounds/rain.mp3"></audio>
+    <audio id="tap-sound" src="./sounds/tap.mp3"></audio>
     <audio id="background-sound" src="./sounds/background.mp3" loop></audio>
 
     <script src="index.js"></script>
