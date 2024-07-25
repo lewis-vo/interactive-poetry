@@ -270,9 +270,8 @@ playSoundOnHover();
 
 
 const bgSound = document.getElementById("background-sound");
-bgSound.muted = true; // Start muted to bypass restrictions
-bgSound.play().then(() => {
-  bgSound.muted = false; // Unmute after play promise resolves
+document.getElementById("play-button").addEventListener("click", () => {
+  bgSound.play()
 });
 
 function createParallaxEffect() {
