@@ -245,7 +245,6 @@ rainTrigger.addEventListener("click", (arguments) => {
   const audio = document.getElementById("rain-sound");
   if (!audio) return; // If audio element not found, exit function
   audio.play();
-  rainTrigger.removeEventListener('click', arguments.callee); // Remove event listener after first click
 });
 
 function playSoundOnHover() {
