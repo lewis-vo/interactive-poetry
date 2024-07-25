@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Do you want somebody, like I want somebody?</title>
+    <title>Do You Want Somebody, Like I Want Somebody?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="theme-color" content="#ed0103" />
@@ -12,10 +12,10 @@
       rel="stylesheet"
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
-    
   </head>
 
   <body id="main">
+    <!-- Custom Cursor that reacts to specific elements on the page -->
     <div id="cursor"></div>
 
     <div id="corner-overlay">
@@ -25,12 +25,14 @@
       <img class="screen-corner" src="./assets/border.png" />
     </div>
 
+    <!-- TITLE CARD -->
     <section class="section" id="s0">
+      <img id="poem-title" src="./assets/Scene0_1.svg" />
       <img
-        id="poem-title"
-        src="./assets/Scene0_1.svg"
+        id="play-button"
+        class="cursor-interest"
+        src="./assets/Scene0_2.svg"
       />
-      <img id="play-button" class="cursor-interest" src="./assets/Scene0_2.svg">
       <div class="halftone">
         <div></div>
         <div></div>
@@ -39,72 +41,67 @@
       </div>
     </section>
 
+    <!-- GRAFFITI HEARTS -->
     <section class="section" id="s1">
-      <div class="chains chains--bottom" src="./assets/Scene1_1.png" data-parallax-stall="80"></div>
-      <div id="heart" class="heart-container cursor-interest">
+      <div
+        class="chains chains-bottom"
+        src="./assets/Scene1_1.png"
+        data-parallax-stall="80"
+      ></div>
+      <div id="heart-start" class="heart-container cursor-interest">
         <img class="heart" src="./assets/Scene1_3.png" />
         <img class="heart-sticker" src="./assets/Scene1_4.png" />
         <img class="heart-label" src="./assets/Scene1_5.svg" />
       </div>
-      <div class="chains" src="./assets/Scene1_1.png" data-parallax-stall="-120"></div>
+      <div
+        class="chains"
+        src="./assets/Scene1_1.png"
+        data-parallax-stall="-120"
+      ></div>
 
       <img id="ransom1" src="./assets/Scene1_2.svg" />
 
-      <p class="text-align-right" style="--offset-x: -283px; --rotation: 17deg">
-        etched on
-      </p>
-      <p
-        class="text-align-right"
-        style="--offset-x: -303px; --rotation: -27deg; --offset-y: 60px"
-      >
-        chipped<br />bathroom tiles,
-      </p>
+      <p class="text-align-right" id="s1-p1">etched on</p>
+      <p class="text-align-right" id="s1-p2">chipped<br />bathroom tiles,</p>
 
-      <p
-        class="text-align-left"
-        style="--offset-x: 261px; --rotation: -19deg; --offset-y: 67px"
-      >
-        Our initials<br />scrawled,
-      </p>
-      <p
-        class="text-align-left"
-        style="--offset-x: 283px; --rotation: 17deg; --offset-y: 120px"
-      >
-        a secret<br />held for miles.
-      </p>
+      <p class="text-align-left" id="s1-p3">Our initials<br />scrawled,</p>
+      <p class="text-align-left" id="s1-p4">a secret<br />held for miles.</p>
     </section>
 
+    
+    <!-- DEER IN HEADLIGHTS -->
     <section class="section" id="s2">
       <img id="spotlight" src="./assets/Scene2_1.png" />
       <img id="court" src="./assets/Scene2_5.png" />
       <div id="ball1" class="ball-wrapper">
-        <img class="ball" src="./assets/Scene2_6.png" />
+        <img class="ball-img" src="./assets/Scene2_6.png" />
       </div>
 
       <div id="ball2" class="ball-wrapper">
-        <img class="ball" src="./assets/Scene2_6.png" />
+        <img class="ball-img" src="./assets/Scene2_6.png" />
       </div>
 
       <div id="ball3" class="ball-wrapper">
-        <img class="ball" src="./assets/Scene2_6.png" />
+        <img class="ball-img" src="./assets/Scene2_6.png" />
       </div>
 
       <img id="deer" src="./assets/Scene2_2.png" />
       <img id="butterfly" src="./assets/Scene2_4.png" />
 
-      <p id="r2-p2">
+      <p id="s2-p2">
         Dodgeballs bounce,<br />a blur of shouts and cheers,<br />But I stand
       </p>
       <div id="frozen-wrapper" class="cursor-interest">
-        <p id="r2-p3">frozen</p>
+        <p id="s2-p3">frozen</p>
         <img src="./assets/Scene2_3.gif" />
       </div>
-      <p id="r2-p4">
+      <p id="s2-p4">
         lost in your eyes,<br />
         my breath disappears.
       </p>
     </section>
 
+    <!-- COIN-CLOCK -->
     <section class="section" id="s3">
       <img id="hand-clock" src="./assets/Scene3_3.png" />
       <div id="rip-behind-clock"></div>
@@ -117,17 +114,24 @@
         </div>
       </div>
 
-      <img id="ransom3" data-sound-on-hover="clink-sound" data-volume=".72" class="cursor-interest" src="./assets/Scene3_2.svg" />
+      <img
+        id="ransom3"
+        data-sound-on-hover="clink-sound"
+        data-volume=".72"
+        class="cursor-interest"
+        src="./assets/Scene3_2.svg"
+      />
 
-      <p id="r3-p1" class="text-align-right">
+      <p id="s3-p1" class="text-align-right">
         Vending machine<br />hummed, the
       </p>
-      <p id="r3-p2" class="text-align-right">of coins,<br />a hollow ring</p>
-      <p id="r3-p3" class="text-align-right">
+      <p id="s3-p2" class="text-align-right">of coins,<br />a hollow ring</p>
+      <p id="s3-p3" class="text-align-right">
         Buying time,<br />hoping for a glance,<br /><br />anything.
       </p>
     </section>
 
+    <!-- RED SEA -->
     <section class="section" id="s4">
       <img id="ocean-back" src="./assets/Scene4_2.svg" />
       <img id="falling" src="./assets/Scene4_3.png" />
@@ -140,8 +144,13 @@
       <img id="ocean-front" src="./assets/Scene4_1.svg" />
     </section>
 
+    <!-- RAIN TOWN -->
     <section class="section" id="s5a">
-      <img id="rain-setting" src="./assets/Scene5a_7.png" data-parallax-stall="100"/>
+      <img
+        id="rain-setting"
+        src="./assets/Scene5a_7.png"
+        data-parallax-stall="100"
+      />
       <img id="rain1" src="./assets/rain.gif" />
       <img id="rain2" src="./assets/rain.gif" />
       <img id="rain3" src="./assets/rain.gif" />
@@ -166,6 +175,7 @@
       <div id="flash"></div>
     </section>
 
+    <!-- THE SCREAM -->
     <section class="section" id="s5b">
       <img class="scream" src="./assets/Scene5b_4.png" />
       <img class="floaty" id="f1" src="./assets/Scene5b_5.png" />
@@ -178,19 +188,30 @@
       <img class="floaty" id="f7" src="./assets/Scene5b_11.png" />
       <img class="floaty" id="f8" src="./assets/Scene5b_9.svg" />
 
-      <p id="r5b-p1">A</p>
+      <p id="s5b-p1">A</p>
       <div class="star-select">
         <img src="./assets/Scene5b_1.gif" />
         <img src="./assets/Scene5b_2.gif" />
       </div>
-      <p id="r5b-p2">trapped in my throat,<br />a wasted space.</p>
-      <img id="ransom5b" class="cursor-interest" src="./assets/Scene5b_3.svg" data-sound-on-hover="scream-sound" data-volume="1" />
+      <p id="s5b-p2">trapped in my throat,<br />a wasted space.</p>
+      <img
+        id="ransom5b"
+        class="cursor-interest"
+        src="./assets/Scene5b_3.svg"
+        data-sound-on-hover="scream-sound"
+        data-volume="1"
+      />
     </section>
 
     <section class="section buffer" style="height: 20vh"></section>
 
+    <!-- UMBRELLA SCHOOL -->
     <section class="section" id="s6">
-      <img id="school-backdrop" src="./assets/Scene6_1.png" data-parallax-stall="80"/>
+      <img
+        id="school-backdrop"
+        src="./assets/Scene6_1.png"
+        data-parallax-stall="80"
+      />
       <img id="umbrella-girl" src="./assets/Scene6_2.png" />
       <div class="umbrella-container">
         <img id="umbrella1" class="umbrella" src="./assets/Scene6_4.png" />
@@ -203,19 +224,20 @@
 
       <div class="umbrella-text">
         <img id="ransom6" src="./assets/Scene6_3.svg" />
-        <p id="r6-p1">Shoulders hunched</p>
-        <p id="r6-p2">
+        <p id="s6-p1">Shoulders hunched</p>
+        <p id="s6-p2">
           I watched<br />
           you disappear,
         </p>
-        <p id="r6-p3">My flimsy umbrella</p>
-        <p id="r6-p4">a love</p>
-        <p id="r6-p5">drowned<br />in fear.</p>
+        <p id="s6-p3">My flimsy umbrella</p>
+        <p id="s6-p4">a love</p>
+        <p id="s6-p5">drowned<br />in fear.</p>
       </div>
     </section>
 
     <section class="section buffer"></section>
 
+    <!-- YEARBOOK HANDS -->
     <section class="section" id="s7">
       <div class="halftone">
         <div></div>
@@ -304,7 +326,7 @@
         <div></div>
         <div></div>
       </div>
-      <p id="r7-p1">
+      <p id="s7-p1">
         Yearbook gathered dust,<br />ghosts on a forgotten shelf,<br />
         Your picture a punch to the gut,<br />
         a love story left on itself.
@@ -316,15 +338,16 @@
       style="background-color: var(--red); height: 20vh"
     ></section>
 
+    <!-- FINAL LETTER -->
     <section class="section" id="s8">
-      <img class="border" src="./assets/Scene8_1.svg" />
+      <img id="page-rip" src="./assets/Scene8_1.svg" />
       <img id="ransom8" src="./assets/Scene8_2.svg" />
 
       <div class="envelope cursor-interest">
         <img src="./assets/Scene8_4.png" class="envelope-back" />
         <div class="letter">
           <img src="./assets/Scene8_5.png" class="letter-paper" />
-          <p id="r8-p1">
+          <p id="s8-p1">
             a symphony of <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forgotten
             youth,
@@ -336,6 +359,7 @@
         <img src="./assets/Scene8_3.png" class="envelope-front" />
       </div>
     </section>
+
     <audio id="clink-sound" src="./sounds/clink.mp3"></audio>
     <audio id="scream-sound" src="./sounds/yah.mp3"></audio>
     <audio id="rain-sound" src="./sounds/rain.mp3"></audio>

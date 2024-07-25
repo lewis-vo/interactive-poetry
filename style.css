@@ -29,6 +29,11 @@ html {
   );
 }
 
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 body {
   color: var(--text);
   font-family: "Chelsea Market";
@@ -84,7 +89,7 @@ p {
   bottom: 0;
   mix-blend-mode: multiply;
   z-index: -1;
-  animation: halftone-move 60s infinite steps(900);
+  overflow: hidden;
 }
 
 @keyframes halftone-move {
@@ -106,6 +111,7 @@ p {
   background-repeat: repeat;
   background-size: 640px;
   flex-shrink: 0;
+  animation: halftone-move 60s infinite steps(900);
 }
 
 #corner-overlay {
@@ -175,15 +181,15 @@ p {
   width: 73.5vw;
   top: -5%; /* Optical adjustment for centering things */
   /*animation: slam 5s alternate-reverse infinite steps(10);*/
-  animation: titlecard .8s 1 forwards steps(10);
+  animation: titlecard 0.8s 1 forwards steps(10);
   animation-delay: 300ms;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #play-button {
   position: absolute;
   bottom: 72px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #play-button:hover {
@@ -194,10 +200,9 @@ p {
   transform: scale(0.7, 0.8);
 }
 
-
 @keyframes titlecard {
   0% {
-    transform: scale(.3);
+    transform: scale(0.3);
   }
   45% {
     transform: scale(1.089);
@@ -235,8 +240,6 @@ p {
     transform: translate(0, 0);
   }
 }
-
-
 
 /* SECTION 1 */
 #s1 {
@@ -279,7 +282,7 @@ p {
   transition-delay: 400ms;
 }
 
-.chains--bottom {
+.chains-bottom {
   top: unset;
   height: 1280px;
   background-size: 900px auto;
@@ -408,6 +411,29 @@ p {
   --rotation: 40deg;
 }
 
+p#s1-p1 {
+  --offset-x: -283px;
+  --rotation: 17deg;
+}
+
+p#s1-p2 {
+  --offset-x: -303px;
+  --rotation: -27deg;
+  --offset-y: 60px;
+}
+
+p#s1-p3 {
+  --offset-x: 261px;
+  --rotation: -19deg;
+  --offset-y: 67px;
+}
+
+p#s1-p4 {
+  --offset-x: 283px;
+  --rotation: 17deg;
+  --offset-y: 120px;
+}
+
 .text-align-right {
   text-align: right;
   transform-origin: top right;
@@ -436,19 +462,19 @@ p {
   z-index: 100;
 }
 
-#r2-p1 {
+#s2-p1 {
   left: 92px;
   top: 86px;
 }
 
-#r2-p2 {
+#s2-p2 {
   position: absolute;
   right: 70px;
   bottom: 250px;
   width: 320px;
 }
 
-#r2-p3 {
+#s2-p3 {
   position: absolute;
   width: 191px;
   left: 60px;
@@ -457,7 +483,7 @@ p {
   color: var(--dark);
 }
 
-#r2-p4 {
+#s2-p4 {
   position: absolute;
   right: 70px;
   bottom: 70px;
@@ -470,6 +496,7 @@ p {
   right: 200px;
   bottom: 90px;
   height: 134px;
+  z-index: 100;
 }
 
 #frozen-wrapper img {
@@ -544,7 +571,7 @@ p {
   clip-path: inset(0% 0px 0% 0px);
 }
 
-.ball {
+.ball-img {
   position: absolute;
   width: 100%;
   bottom: 0px;
@@ -553,7 +580,7 @@ p {
   transform-origin: bottom center;
 }
 
-.ball-wrapper:hover .ball {
+.ball-wrapper:hover .ball-img {
   animation: bounce 1.5s steps(30);
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
@@ -734,25 +761,25 @@ p {
   transform: scale(1.7, 1.3);
 }
 
-#r3-p1,
-#r3-p2,
-#r3-p3 {
+#s3-p1,
+#s3-p2,
+#s3-p3 {
   position: absolute;
   bottom: 569px;
   right: 632px;
 }
 
-p#r3-p1 {
+p#s3-p1 {
   transform: rotate(25deg);
 }
 
-p#r3-p2 {
+p#s3-p2 {
   bottom: 330px;
   right: 700px;
   transform: rotate(-15deg);
 }
 
-p#r3-p3 {
+p#s3-p3 {
   bottom: 200px;
   right: 680px;
   transform: rotate(-35deg);
@@ -1153,15 +1180,15 @@ img#running {
 #ransom5b:hover {
   transform: translate(-50%, -50%) scale(1.5, 1.7);
 }
-#r5b-p1,
-#r5b-p2 {
+#s5b-p1,
+#s5b-p2 {
   position: absolute;
   top: 167px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
 }
-#r5b-p2 {
+#s5b-p2 {
   top: unset;
   bottom: 167px;
 }
@@ -1421,31 +1448,31 @@ img#running {
   --duration: 4.3s;
 }
 
-#r6-p1 {
+#s6-p1 {
   position: absolute;
   left: 230px;
   top: 200px;
 }
 
-#r6-p2 {
+#s6-p2 {
   position: absolute;
   left: 300px;
   top: 400px;
 }
 
-#r6-p3 {
+#s6-p3 {
   position: absolute;
   left: 540px;
   top: 30px;
 }
 
-#r6-p4 {
+#s6-p4 {
   position: absolute;
   left: 890px;
   top: 150px;
 }
 
-#r6-p5 {
+#s6-p5 {
   position: absolute;
   left: 980px;
   top: 350px;
@@ -1470,7 +1497,7 @@ img#running {
   height: 720px;
   overflow: hidden;
 }
-#r7-p1 {
+#s7-p1 {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -1617,7 +1644,7 @@ img#running {
   transform-origin: center left;
 }
 
-.border {
+#page-rip {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1691,7 +1718,7 @@ img#running {
   width: 400px;
 }
 
-#r8-p1 {
+#s8-p1 {
   width: 300px;
   color: var(--dark);
   transform: rotate(22deg);
