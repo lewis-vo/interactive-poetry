@@ -28,11 +28,10 @@
     <!-- TITLE CARD -->
     <section class="section" id="s0">
       <img id="poem-title" src="./assets/Scene0_1.svg" />
-      <img
-        id="play-button"
-        class="cursor-interest"
-        src="./assets/Scene0_2.svg"
-      />
+      <div id="play-button" class="cursor-interest">
+        <img id="play-image" src="./assets/Scene0_2.svg" />
+        <img id="pause-image" src="./assets/Scene0_3.svg" />
+      </div>
       <div class="halftone">
         <div></div>
         <div></div>
@@ -68,7 +67,6 @@
       <p class="text-align-left" id="s1-p4">a secret<br />held for miles.</p>
     </section>
 
-    
     <!-- DEER IN HEADLIGHTS -->
     <section class="section" id="s2">
       <img id="spotlight" src="./assets/Scene2_1.png" />
@@ -86,7 +84,7 @@
       </div>
 
       <img id="deer" src="./assets/Scene2_2.png" />
-      <img id="butterfly" src="./assets/Scene2_4.png" />
+      <img id="butterfly" src="./assets/Scene2_4.gif" />
 
       <p id="s2-p2">
         Dodgeballs bounce,<br />a blur of shouts and cheers,<br />But I stand
@@ -156,11 +154,13 @@
       <img id="rain3" src="./assets/rain.gif" />
       <div id="rain-content">
         <img id="lightning1" src="./assets/Scene5a_2.svg" />
-        <img
-          id="ransom5a"
-          class="cursor-interest"
-          src="./assets/Scene5a_1.svg"
-        />
+        <div id="ransom5a-wrapper" class="cursor-interest">
+          <img
+            id="ransom5a"
+            src="./assets/Scene5a_1.svg"
+          />
+          <img id="click-hint" src="./assets/Scene5a_9.gif" />
+        </div>
         <img class="heartring" src="./assets/Scene5a_4.svg" />
         <div class="dialogue-box">you hurried,</div>
         <img id="lightning2" src="./assets/Scene5a_3.svg" />
@@ -199,7 +199,7 @@
         class="cursor-interest"
         src="./assets/Scene5b_3.svg"
         data-sound-on-hover="scream-sound"
-        data-volume="1"
+        data-volume="0.39"
       />
     </section>
 
@@ -341,7 +341,7 @@
     <!-- FINAL LETTER -->
     <section class="section" id="s8">
       <img id="page-rip" src="./assets/Scene8_1.svg" />
-      <img id="ransom8" src="./assets/Scene8_2.svg" />
+      <img id="ransom8" class="cursor-interest" src="./assets/Scene8_2.svg" />
 
       <div class="envelope cursor-interest">
         <img src="./assets/Scene8_4.png" class="envelope-back" />
@@ -364,6 +364,7 @@
     <audio id="scream-sound" src="./sounds/yah.mp3"></audio>
     <audio id="rain-sound" src="./sounds/rain.mp3"></audio>
     <audio id="tap-sound" src="./sounds/tap.mp3"></audio>
+    <audio id="crowd-sound" src="./sounds/crowd.mp3" loop></audio>
     <audio id="background-sound" src="./sounds/background.mp3" loop></audio>
 
     <script src="index.js"></script>

@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     cursor.style.opacity = 1;
   };
 
-  window.onmouseout = () => {
+  document.body.addEventListener("mouseleave", (e) => {
     initCursor = false;
     cursor.style.opacity = 0;
-  };
+  });
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -146,10 +146,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
   playSoundOnClick();
 
   const bgSound = document.getElementById("background-sound");
-  document.getElementById("play-button").addEventListener("click", () => {
-    bgSound.play();
-    bgSound.volume = 0.9;
-  });
+  const playImage = document.getElementById('play-image');
+  const pauseImage = document.getElementById('pause-image');
+  const style = {
+    active: 'transform: scale(1); opacity: 1;',
+    inactive: 'transform: scale(0.7); opacity: 0;'
+  }
+  const toggleSound = (firstTime) => {
+    if (firstTime === true) {
+      bgSound.pause();
+      playImage.style.cssText = style.active;
+      pauseImage.style.cssText = style.inactive;
+      return;
+    }
+
+    if (bgSound.paused) {
+      bgSound.play();
+      bgSound.volume = 0.9;
+
+      playImage.style.cssText = style.inactive;
+      pauseImage.style.cssText = style.active;
+    } else {
+      bgSound.pause();
+      playImage.style.cssText = style.active;
+      pauseImage.style.cssText = style.inactive;
+    }
+  };
+
+  document.getElementById("play-button").addEventListener("click", toggleSound);
+  toggleSound(true);
 
   function createParallaxEffect() {
     const parallaxElements = document.querySelectorAll("[data-parallax-stall]");
@@ -182,6 +207,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         checkVisibility();
         applyParallax();
       });
+
+      checkVisibility();
+      applyParallax();
     });
   }
 
@@ -195,6 +223,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   document.getElementById("s7").addEventListener("mouseenter", () => {
     rainAudio.pause();
+  });
+
+  const crowdSound = document.getElementById("crowd-sound");
+  document.querySelector(".envelope").addEventListener("mouseover", () => {
+    crowdSound.play();
+    crowdSound.volume = 0.9;
+  });
+  document.querySelector(".envelope").addEventListener("mouseout", () => {
+    crowdSound.pause();
   });
 
 });

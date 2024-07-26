@@ -61,7 +61,7 @@ p {
   height: 120px;
   border-radius: 50%;
   background-color: white;
-  transition: transform 350ms ease;
+  transition: transform 350ms ease, opacity 200ms ease;
   transform: translate(-50%, -50%) scale(0.3);
   z-index: 1000;
 }
@@ -134,7 +134,7 @@ p {
   background-size: 100vw 3px;
   animation: bgscroll 15s linear infinite;
   filter: blur(0.5px);
-  opacity: .92;
+  opacity: 0.92;
 }
 
 @keyframes bgscroll {
@@ -189,8 +189,18 @@ p {
 
 #play-button {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  height: 84px;
   bottom: 72px;
-  transition: 0.5s;
+  transition: 0.2s;
+}
+
+#play-button img {
+  position: absolute;
+  transition: transform 400ms, opacity 100ms;
+  top: 0;
 }
 
 #play-button:hover {
@@ -218,27 +228,6 @@ p {
   100% {
     transform: scale(1);
     filter: drop-shadow(30px 30px 0px var(--red));
-  }
-}
-
-@keyframes slam {
-  0% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(2px, 6px);
-  }
-  30% {
-    transform: translate(-8px, 0px);
-  }
-  60% {
-    transform: translate(2px, -4px);
-  }
-  80% {
-    transform: translate(-9px, -1px);
-  }
-  100% {
-    transform: translate(0, 0);
   }
 }
 
@@ -281,19 +270,50 @@ p {
   clip-path: inset(0px 100% 0px 0px);
   transition: clip-path 1s steps(24);
   transition-delay: 400ms;
+  animation: chains-moving 3s infinite alternate-reverse steps(8);
+
+  --rotation: 0deg;
+  --offset: 0vw;
+  --move-amount: 1vh;
+}
+
+@keyframes chains-moving {
+  0% {
+    transform: rotate(var(--rotation)) translateY(var(--offset));
+  }
+
+  45% {
+    transform: rotate(var(--rotation)) translateY(calc(var(--offset) - var(--move-amount)));
+  }
+
+  55% {
+    transform: rotate(var(--rotation)) translateY(calc(var(--offset) - var(--move-amount)));
+  }
+
+
+  90% {
+    transform: rotate(var(--rotation)) translateY(var(--offset));
+  }
+  100% {
+    transform: rotate(var(--rotation)) translateY(var(--offset));
+  }
 }
 
 .chains-bottom {
   top: unset;
   height: 1280px;
   background-size: 900px auto;
-  transform: rotate(45deg) translateY(-6vw);
   z-index: -10;
   background-position: 10px 158px;
   width: 1280px;
   clip-path: inset(0px 100% 0px 0px);
   transition: clip-path 0.8s steps(24);
   transition-delay: 500ms;
+  animation-duration: 5s;
+
+  --rotation: 45deg;
+  --offset: -6vw;
+  --move-amount: .86vh;
 }
 
 .s1-scrolled .chains--bottom,
@@ -545,7 +565,7 @@ p#s1-p4 {
 
 .s2-scrolled #butterfly {
   opacity: 1;
-  filter: drop-shadow(26px 4px 0 white);
+  filter: drop-shadow(15px 4px 0 white);
 }
 
 #spotlight {
@@ -553,7 +573,7 @@ p#s1-p4 {
   width: 474px;
   mix-blend-mode: color;
 
-  animation: spotlight-move 2s infinite alternate-reverse steps(8);
+  animation: spotlight-move 2.9s infinite alternate-reverse steps(8);
   pointer-events: none;
 }
 
@@ -955,10 +975,37 @@ p#s3-p3 {
   opacity: 0.4;
 }
 
-#ransom5a {
+#ransom5a-wrapper {
   position: absolute;
   left: 134px;
   top: 146px;
+  width: 600px;
+  height: 289px;
+  z-index: 5;
+}
+
+#click-hint {
+  width: 190px;
+  transform-origin: bottom left;
+  right: 0px;
+  position: absolute;
+  /* filter: drop-shadow(25px 25px 0 var(--red)); */
+  transform: translate(55%, -70%);
+  z-index: 10;
+  opacity: 0;
+  transition: 90ms;
+}
+
+#ransom5a-wrapper:hover #click-hint {
+  opacity: 1;
+}
+
+.s5a-triggered #ransom5a-wrapper #click-hint {
+  opacity: 0;
+}
+
+#ransom5a {
+  position: relative;
   width: 600px;
   transition: 1s;
   animation: bulging 2s infinite steps(12);
@@ -1541,7 +1588,6 @@ img#running {
   animation-name: jittering;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0, 0.98, 1, 0.16);
   animation-timing-function: steps(3);
   animation-fill-mode: forwards;
   animation-direction: alternate;
@@ -1655,21 +1701,25 @@ img#running {
   transform: scale(1);
 }
 
+#ransom8:hover {
+  animation: .5s slam infinite alternate-reverse steps(4);
+}
+
 @keyframes slam {
   0% {
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(40px, 20px);
+    transform: translate(10px, 4px) scale(1.05, 1.1);
   }
   30% {
-    transform: translate(-30px, 0px);
+    transform: translate(-5px, 0px);
   }
   60% {
-    transform: translate(20px, 10px);
+    transform: translate(5px, 2px) scale(1.05, 1.1);
   }
   80% {
-    transform: translate(30px, -10px);
+    transform: translate(6px, -2px);
   }
   100% {
     transform: translate(0, 0);
@@ -1687,7 +1737,7 @@ img#running {
   bottom: 0;
   right: 150px;
   transform: translateY(200px) rotate(30deg);
-  transition: 700ms steps(12);
+  transition: 700ms steps(20);
   transition-delay: 500ms;
 }
 
@@ -1710,6 +1760,40 @@ img#running {
   left: 70px;
   bottom: 200px;
   transition: 2s steps(16);
+}
+
+.envelope:hover {
+  transition-delay: 0s;
+  transition: 0.5s;
+  transform-origin: bottom center;
+  filter: drop-shadow(20px 20px 0px var(--red));
+  animation: 6s envelope-moving infinite steps(20);
+}
+
+@keyframes envelope-moving {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+  80% {
+    transform: translateY(23px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.envelope:active {
+  transition-delay: 0s;
+  transition: 0.5s;
+  transform: scale(0.9);
+  transform-origin: bottom center;
+  filter: none;
 }
 
 .letter-paper {
